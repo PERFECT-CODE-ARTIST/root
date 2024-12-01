@@ -1,0 +1,27 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.2'
+	id 'io.spring.dependency-management'
+}
+
+dependencies {
+	implementation project(':core')
+	implementation project(':common')
+	implementation project(':user')
+}
+
+bootJar {
+	enabled = true
+}
+
+jar {
+	enabled = false
+}
+
+test {
+	exclude '**/*'
+}
+
+springBoot {
+	mainClass.set("com.study.api.ApiApplication")
+}
